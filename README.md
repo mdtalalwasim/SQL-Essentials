@@ -1,7 +1,14 @@
 # SQL-Essentials
 SQL-Essentials
 
-#### All Base Table Count
+
+#### Database Backup:
+```bash
+mysqldump -u user_name -p db_name > save_file_name.sql;
+```
+
+
+#### All Base Table Count:
 ```bash
 USE Database_Name
 SELECT Count(*)
@@ -16,6 +23,7 @@ USE Database_Name
 SELECT COUNT(*)
 FROM information_schema.tables
 WHERE table_schema = 'Database_Name';
+
 ```
 
 #### Database Specific Table Count [Alternative Way]:
@@ -24,3 +32,13 @@ USE Database_Name;
 SHOW TABLES;
 SELECT FOUND_ROWS();
 ```
+
+
+#### Database Specific Table Count:
+```bash
+USE Database_Name
+SELECT COUNT(*)
+FROM information_schema.tables
+WHERE table_schema = 'Database_Name';
+```
+
