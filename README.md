@@ -2,6 +2,13 @@
 SQL-Essentials
 
 
+
+#### Fetch Data in Descending Order 0 to 100 ORDER BY ID:
+```bash
+SELECT id FROM devices ORDER BY id DESC LIMIT 0, 100;
+```
+
+
 #### Database Backup:
 ```bash
 mysqldump -u user_name -p db_name > save_file_name.sql;
