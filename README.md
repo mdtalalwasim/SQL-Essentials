@@ -2,6 +2,10 @@
 SQL-Essentials
 
 
+#### Total Count from Table:
+```bash
+SELECT COUNT(*) AS TotalCount FROM table_name;
+```
 
 #### Fetch Data in Descending Order 0 to 100 ORDER BY ID:
 ```bash
