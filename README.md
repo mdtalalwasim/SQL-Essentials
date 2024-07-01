@@ -1,6 +1,15 @@
 # SQL-Essentials
 SQL-Essentials
 
+#### Duplicate Check in Table:
+```bash
+SELECT imei, COUNT(imei)
+FROM tokens
+GROUP BY imei
+HAVING COUNT(imei) > 1
+
+```
+
 
 #### Total Count from Table:
 ```bash
