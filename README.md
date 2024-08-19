@@ -64,7 +64,23 @@ WHERE table_schema = 'Database_Name';
 
 
 #### Import Local Database to Liver Server Database (on linux server):
-##### 1. Access Your Live Server via SSH
+
+#### Steps to Transfer the Database:
+##### 1. Export the Local Database using Client Export/Import Section or Using command line:
+
+###### Using Command Line:
+```bash
+mysqldump -u your_username -p mydbName > mydb.sql
+
+```
+##### 2. Transfer the SQL File to the Live Server
+Next, you need to transfer the mydb.sql file to your live server. You can use scp, rsync, or any other file transfer method.
+- first navigate to the mydb.sql file directory and then
+```bash
+scp mydb.sql your_username@live_server_ip:/path/to/destination/
+```
+
+##### 3. Access Your Live Server via SSH
 First, you'll need to connect to your live server using SSH. You can do this from your local terminal (Linux/Mac) or using a tool like PuTTY (Windows):
 ```bash
 ssh your_username@live_server_ip
@@ -75,12 +91,12 @@ ssh your_username@live_server_ip
 - live_server_ip: This is the IP address of your live server.
 You'll be prompted to enter your password for the server.
 
-##### 2. Navigate to the Directory Containing the SQL File
+##### 4. Navigate to the Directory Containing the SQL File
 Once you're logged in, navigate to the directory where you transferred the "myDb.sql" file. You can use the cd command to change directories.
 ```bash
 cd /path/to/destination/
 ```
-##### 3. Import the SQL File into the MySQL Database
+##### 5. Import the SQL File into the MySQL Database
 ```bash
 mysql -u your_mysql_username -p your_live_database_name < myDbLocal.sql
 ```
