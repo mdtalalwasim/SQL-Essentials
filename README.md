@@ -1,6 +1,17 @@
 # SQL-Essentials
 SQL-Essentials
 
+#### Remove Primary from Existing Table and set primary_key, not null, auto_increment property
+```bash
+ALTER TABLE locations 
+DROP PRIMARY KEY;
+
+ALTER TABLE locations 
+MODIFY id BIGINT NOT NULL AUTO_INCREMENT, 
+ADD PRIMARY KEY (id);
+```
+
+
 #### Duplicate Check in Table:
 ```bash
 SELECT imei, COUNT(imei)
